@@ -1,37 +1,24 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-
+import { getAnalytics} from "firebase/analytics";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-
-import { getAnalytics, isSupported } from "firebase/analytics";
-
-
-
-
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID,
-  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
+  apiKey: "AIzaSyD2kGvj3FEJotWnPZuG7HDvvUYvcVt-Z0g",
+  authDomain: "smart-academy-760e4.firebaseapp.com",
+  projectId: "smart-academy-760e4",
+  storageBucket: "smart-academy-760e4.firebasestorage.app",
+  messagingSenderId: "361654417255",
+  appId: "1:361654417255:web:5aacb661bf1ca5c73021c2",
+  measurementId: "G-12CFRR7YQ6"
 };
 
-
 // Initialize Firebase
-let analytics;
-if (typeof window !== "undefined") {
-  isSupported().then((yes) => {
-    if (yes) analytics = getAnalytics(app);
-  });
-}
 const app = initializeApp(firebaseConfig);
-
+const analytics = getAnalytics(app);
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
