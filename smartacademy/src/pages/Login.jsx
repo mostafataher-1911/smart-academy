@@ -8,6 +8,7 @@ import { FcGoogle } from "react-icons/fc";
 
 export default function Login() {
   const navigate = useNavigate();
+  console.log("API Key:", import.meta.env.VITE_FIREBASE_API_KEY);
 
   const formik = useFormik({
     initialValues: { email: "", password: "" },
@@ -44,6 +45,7 @@ export default function Login() {
       toast.error(err.message);
     }
   };
+
 
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100">
